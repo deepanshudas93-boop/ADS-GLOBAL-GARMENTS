@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ADS Global Garments | Admin Login</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+
+      background:
+        radial-gradient(
+          circle at top right,
+          rgba(247, 183, 25, 0.14),
+          transparent 35%
+        ),
+        #080808;
+
+      color: #f5f5f0;
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      width: 100%;
+      max-width: 440px;
+    }
+
+    .brand {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .logo-mark {
+      width: 62px;
+      height: 62px;
+      margin: 0 auto 15px;
+
+      display: grid;
+      place-items: center;
+
+      background: #f7b719;
+      color: #111;
+
+      border-radius: 14px;
+
+      font-size: 36px;
+      font-weight: 900;
+    }
+
+    .brand h1 {
+      font-size: 25px;
+      letter-spacing: 1px;
+    }
+
+    .brand p {
+      margin-top: 7px;
+      color: #999;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .login-box {
+      padding: 35px;
+
+      background: #151515;
+
+      border: 1px solid rgba(255, 255, 255, 0.12);
+
+      border-radius: 14px;
+
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.5);
+    }
+
+    .login-box h2 {
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+
+    .login-box .subtitle {
+      margin-bottom: 28px;
+      color: #999;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .input-group {
+      margin-bottom: 18px;
+    }
+
+    .input-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #c8c8c8;
+      font-size: 13px;
+      font-weight: 600;
+    }
+
+    .input-group input {
+      width: 100%;
+      padding: 15px 16px;
+
+      background: #0d0d0d;
+      color: white;
+
+      border: 1px solid rgba(255, 255, 255, 0.14);
+
+      border-radius: 6px;
+      outline: none;
+
+      font-size: 15px;
+    }
+
+    .input-group input:focus {
+      border-color: #f7b719;
+    }
+
+    .login-btn {
+      width: 100%;
+      margin-top: 8px;
+      padding: 16px;
+
+      border: none;
+      border-radius: 6px;
+
+      background: #f7b719;
+      color: #111;
+
+      font-size: 15px;
+      font-weight: 800;
+
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .login-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(247, 183, 25, 0.2);
+    }
+
+    .login-btn:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    .message {
+      display: none;
+
+      margin-top: 18px;
+      padding: 12px;
+
+      border-radius: 6px;
+
+      text-align: center;
+
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .message.show {
+      display: block;
+    }
+
+    .message.error {
+      background: rgba(255, 70, 70, 0.1);
+      border: 1px solid rgba(255, 70, 70, 0.3);
+      color: #ff8585;
+    }
+
+    .message.success {
+      background: rgba(60, 200, 120, 0.1);
+      border: 1px solid rgba(60, 200, 120, 0.3);
+      color: #72e0a0;
+    }
+
+    .back-link {
+      display: block;
+      margin-top: 22px;
+
+      text-align: center;
+
+      color: #999;
+
+      font-size: 13px;
+      text-decoration: none;
+    }
+
+    .back-link:hover {
+      color: #f7b719;
+    }
+
+    .security-note {
+      margin-top: 25px;
+
+      text-align: center;
+
+      color: #666;
+
+      font-size: 11px;
+      line-height: 1.5;
+    }
+
+    @media (max-width: 500px) {
+      .login-box {
+        padding: 25px 20px;
+      }
+
+      .brand h1 {
+        font-size: 21px;
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <main class="login-container">
+
+```
+<div class="brand">
+
+  <div class="logo-mark">
+    A
+  </div>
+
+  <h1>
+    ADS GLOBAL GARMENTS
+  </h1>
+
+  <p>
+    ADMIN PORTAL
+  </p>
+
+</div>
+
+<section class="login-box">
+
+  <h2>
+    Welcome Back
+  </h2>
+
+  <p class="subtitle">
+    Sign in to manage your products, photos, videos and garment catalogue.
+  </p>
+
+  <form id="loginForm">
+
+    <div class="input-group">
+
+      <label for="email">
+        Admin Email
+      </label>
+
+      <input
+        type="email"
+        id="email"
+        placeholder="Enter your admin email"
+        autocomplete="email"
+        required
+      >
+
+    </div>
+
+    <div class="input-group">
+
+      <label for="password">
+        Password
+      </label>
+
+      <input
+        type="password"
+        id="password"
+        placeholder="Enter your password"
+        autocomplete="current-password"
+        required
+      >
+
+    </div>
+
+    <button
+      type="submit"
+      class="login-btn"
+      id="loginBtn"
+    >
+      Sign In to Admin Panel
+    </button>
+
+  </form>
+
+  <div
+    id="message"
+    class="message"
+  ></div>
+
+  <a
+    href="index.html"
+    class="back-link"
+  >
+    ← Back to ADS Global Garments Website
+  </a>
+
+  <p class="security-note">
+    🔒 Secure authentication powered by Supabase
+  </p>
+
+</section>
+```
+
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script>
+
+    const SUPABASE_URL =
+      "https://vmqobgowygkofnsigaqz.supabase.co";
+
+    const SUPABASE_PUBLISHABLE_KEY =
+      "sb_publishable_R4SJlEqJATYIisBLbD4lSg_5a6b9thT";
+
+    const supabaseClient =
+      window.supabase.createClient(
+        SUPABASE_URL,
+        SUPABASE_PUBLISHABLE_KEY
+      );
+
+
+    const loginForm =
+      document.getElementById("loginForm");
+
+    const loginBtn =
+      document.getElementById("loginBtn");
+
+    const messageBox =
+      document.getElementById("message");
+
+
+    function showMessage(
+      text,
+      type
+    ) {
+
+      messageBox.textContent =
+        text;
+
+      messageBox.className =
+        "message " +
+        type +
+        " show";
+
+    }
+
+
+    async function checkExistingSession() {
+
+      try {
+
+        const {
+          data: {
+            session
+          }
+        } =
+          await supabaseClient.auth.getSession();
+
+
+        if (session) {
+
+          window.location.replace(
+            "admin-dashboard.html"
+          );
+
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Session check failed:",
+          error
+        );
+
+      }
+
+    }
+
+
+    loginForm.addEventListener(
+      "submit",
+      async function(event) {
+
+        event.preventDefault();
+
+
+        const email =
+          document
+            .getElementById("email")
+            .value
+            .trim();
+
+        const password =
+          document
+            .getElementById("password")
+            .value;
+
+
+        messageBox.className =
+          "message";
+
+        messageBox.textContent =
+          "";
+
+
+        loginBtn.disabled =
+          true;
+
+        loginBtn.textContent =
+          "Signing In...";
+
+
+        try {
+
+          const {
+            error
+          } =
+            await supabaseClient.auth.signInWithPassword({
+
+              email:
+                email,
+
+              password:
+                password
+
+            });
+
+
+          if (error) {
+
+            throw error;
+
+          }
+
+
+          showMessage(
+            "Login successful. Opening Admin Panel...",
+            "success"
+          );
+
+
+          setTimeout(
+            function() {
+
+              window.location.replace(
+                "admin-dashboard.html"
+              );
+
+            },
+            700
+          );
+
+
+        } catch (error) {
+
+          showMessage(
+            "Login failed: " +
+            error.message,
+            "error"
+          );
+
+
+          loginBtn.disabled =
+            false;
+
+          loginBtn.textContent =
+            "Sign In to Admin Panel";
+
+        }
+
+      }
+    );
+
+
+    checkExistingSession();
+
+  </script>
+
+</body>
+
+</html>
